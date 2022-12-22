@@ -13,6 +13,7 @@ export default function Header() {
       <div className="container mx-auto max-w-screen-lg h-full">
         <div className="flex justify-between h-full">
           <div className="flex items-center">
+            <p className="mr-3">Click me<br/> to go back</p>
             <Link to={ROUTES.DASHBOARD}>
                 <img src="/images/logo.png" alt="Instagram" className="mt-2 w-6/12" />
             </Link>
