@@ -1,7 +1,17 @@
 import { useState } from 'react';
+import {
+  updateLoggedInUserFollowing,
+  updateFollowedUserFollowers
+} from '../../services/firebase';
 
-export default function SuggestedProfile({ profileDocId, username, profileId, buserId}) {
+export default function SuggestedProfile({ profileDocId, username, profileId, userId, loggedInUserDocId}) {
     const [followed, setFollowed] = useState(false);
+
+    async function handleFollowUser() {
+      setFollowed(true);
+      await updateLoggedInUserFollowing(loggedInUserDocId, profileId, false);
+      await updateFollowedUserFollowers(profileDocId, userId, false);
+    }
   
     return !followed ? (
       <div className="flex items-center align-items justify-between">
@@ -15,7 +25,7 @@ export default function SuggestedProfile({ profileDocId, username, profileId, bu
         <button
           className="text-xs font-bold text-blue-medium"
           type="button"
-          onClick={() => console.log('Follow this user!')}
+          onClick={handleFollowUser}
         >
           Follow
         </button>
