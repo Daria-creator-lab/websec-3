@@ -3,6 +3,7 @@ import useUser from '../../hooks/use-user';
 import { isUserFollowingProfile, toggleFollow } from '../../services/firebase';
 import UserContext from '../../context/user';
 import React from 'react'
+const src = require(`../../images/favicon.ico`);
 
 export default function Header({
   photosCount,
@@ -45,7 +46,7 @@ export default function Header({
     <div className="grid grid-cols-3">
         <div className="container flex justify-center items-center">
             {profileUsername ? (
-            <img className="rounded-full h-40 w-40 flex" src={`/favicon.ico`}/>
+            <img className="rounded-full h-40 w-40 flex" src={src}/>
             ) : (
                 <p className='font-bold'>loading...</p>
             )}

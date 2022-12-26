@@ -5,7 +5,6 @@ import WindowContext from '../context/window';
 
 export default function useAuthListener() {
   const window = useContext(WindowContext);
-  console.log(window);
   if(!window) return {};
   const [user, setUser] = useState(JSON.parse(window.localStorage.getItem('authUser')));
   const firebase = useContext(FirebaseContext);

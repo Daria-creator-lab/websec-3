@@ -20,10 +20,8 @@ const routes =  [
     component: SIGN_UP,
   },
   {
-    path: '/p/raphael',
+    path: '/p',
     component: PROFILE,
-    exact: true,
-    fetchInitialData: (path = '') => path.split('/').pop()
   }
 ]
 

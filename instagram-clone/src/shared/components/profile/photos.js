@@ -7,7 +7,7 @@ export default function Photos({ photos }) {
           ? new Array(12).fill(0).map((_) => <p className='font-bold'>loading...</p>)
           : photos.length > 0
           ? photos.map((photo) => (
-                <img src={photo.imageSrc} />
+                <img src={require(`../../images${photo.imageSrc}`)} />
             ))
           : null}
     </div>
