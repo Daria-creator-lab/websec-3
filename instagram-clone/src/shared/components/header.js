@@ -54,7 +54,7 @@ export default function Header() {
                 <Link to={ROUTES.LOGIN}>
                   <button
                     type="button"
-                    className="bg-blue-medium"
+                    className="bg-blue-medium font-bold text-sm rounded text-white w-20 h-8"
                   >
                     Log In
                   </button>
@@ -62,6 +62,7 @@ export default function Header() {
                 <Link to={ROUTES.SIGN_UP}>
                   <button
                     type="button"
+                    className="font-bold text-sm rounded text-blue-medium w-20 h-8"
                   >
                     Sign Up
                   </button>

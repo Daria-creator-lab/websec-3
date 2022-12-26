@@ -47,6 +47,7 @@ export default function Login() {
               aria-label="Enter your email address"
               type="text"
               placeholder="Email address"
+              className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2"
               onChange={({ target }) => setEmailAddress(target.value)}
               value={emailAddress}
             />
@@ -54,19 +55,21 @@ export default function Login() {
               aria-label="Enter your password"
               type="password"
               placeholder="Password"
+              className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2"
               onChange={({ target }) => setPassword(target.value)}
               value={password}
             />
             <button
               disabled={isInvalid}
               type="submit"
-              className={`bg-blue-medium`}
+              className={`bg-blue-medium text-white w-full rounded h-8 font-bold
+            ${isInvalid && 'opacity-50'}`}
             >
               Login
             </button>
           </form>
         </div>
-        <div>
+        <div className="flex justify-center items-center flex-col w-full bg-white p-4 rounded border border-gray-primary">
           <p className="text-sm">
             Don't have an account?{` `}
             <Link to={ROUTES.SIGN_UP} className="font-bold">
